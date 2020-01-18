@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html class="white-bg">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, initial-scale=1.0, width=device-width"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>提现</title>
+    <link rel="stylesheet" type="text/css" href="../../style/aui.css"/>
+    <link rel="stylesheet" type="text/css" href="../../style/api.css"/>
+    <link rel="stylesheet" type="text/css" href="../../style/aui-flex.css"/>
+    <link rel="stylesheet" type="text/css" href="../../style/style.css"/>
+    <link rel="stylesheet" type="text/css" href="../../style/intlTelInput.css"/>
+    <style>
+        .iptCodeTip{color: #000;font-size: 14px;line-height: 40px;text-align: center}
+        .checkedCode{overflow: hidden}
+        .checkedCode a{float: right;font-size: 13px;color: #000000;text-decoration: underline;line-height: 13px}
+        .checkedCode input{padding: 0;margin:10px 0;width:12%;margin-right: 5.6%;text-align: center;display: block;float: left;height: 35px;border-bottom: solid 1px #898989;border-radius: 0;}
+        .checkedCode input:last-child{margin-right: 0}
+    </style>
+</head>
+<body class="white-bg">
+<div class="aui-content-padded">
+    <div class="aui-margin-l-20 aui-margin-t-20">
+        <div class="aui-font-size-20 font-bold">输入验证码</div>
+        <p class="aui-margin-t-10 aui-font-size-14" style="color: #9e9e9e">我们已经给手机号码<span id="phone_num"></span>发送了验证码</p>
+        <div class="checkedCode">
+            <!--<%&#45;&#45;<input type="text" maxlength="6" id="iptCode">&#45;&#45;%>-->
+            <div class="getCodeMsg">
+                <input type="tel" maxlength="1" id="code1th" name="code" pattern="[0-9]*" />
+                <input type="tel" maxlength="1" id="code2th" name="code" pattern="[0-9]*"/>
+                <input type="tel" maxlength="1" id="code3th" name="code" pattern="[0-9]*"/>
+                <input type="tel" maxlength="1" id="code4th" name="code" pattern="[0-9]*"/>
+                <!--<input type="tel" maxlength="1" name="code" pattern="[0-9]*"/>-->
+                <!--<input type="tel" maxlength="1" name="code" pattern="[0-9]*"/>-->
+            </div>
+        </div>
+        <div class="aui-margin-t-10 aui-font-size-14" style="color: #9e9e9e;position: absolute;" id="verify_btn">重新发送
+            <div class="aui-font-size-12 aui-padded-20" id="demo"></div>
+        </div>
+
+
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="../../script/common/jquery.min.js"></script>
+<script type="text/javascript" src="../../script/common/api.js"></script>
+<script type="text/javascript" src="../../script/common/doT.min.js"></script>
+<script type="text/javascript" src="../../script/common/common.js"></script>
+<script type="text/javascript" src="../../script/common/api-common.js"></script>
+<script type="text/javascript" src="../../script/common/api-manager.js"></script>
+<script type="text/javascript" src="../../script/common/md5.js"></script>
+<script type="text/javascript" src="../../script/project/project-api.js"></script>
+<script type="text/javascript">
+
+    var flag=false
+    var sendtype //从验证码登录进入 还是从注册进入
+    var phonenum//填的电话号
+    apiready = function () {
+        sendtype = getPageParam().param.type
+        phonenum = getPageParam().param.phonenum
+
+        consoledebug.log('phonenum is -->>'+JSON.stringify(phonenum))
+        $("#phone_num").text(phonenum)
+
+        $('.getCodeMsg input').keyup(function (event) {
+            // 删除往前 添加往后
+            if($(this).index()<6) {
+                if(event.keyCode==46 || event.keyCode==8) {
+                    $(this).prev('input').focus();
+                }else {
+                    $(this).next('input').focus();
+                }
+            }
+        })
+//if为第一次读秒；else是重新发送读秒
+        if (!flag){
+            waitingForVerify()
+            flag=true
+        } else {
+            bindClickVerify()
+            flag=false
+        }
+        //重新发送验证码
+
+
+
+        var $inputwrapper = $('.getCodeMsg');
+        $inputwrapper.find('input').on('input propertychange',function(){
+            //获取input 元素,并实时监听用户输入,当输入满格时接口判断，跳入下一页
+            var code1th = $("#code1th").val()
+            var code2th = $("#code2th").val()
+            var code3th = $("#code3th").val()
+            var code4th = $("#code4th").val()
+            if (!(judgeIsAnyNullStr(code1th))&&!(judgeIsAnyNullStr(code2th))&&!(judgeIsAnyNullStr(code3th))&&!(judgeIsAnyNullStr(code4th))){
+                var vertify_code = code1th+code2th+code3th+code4th
+                var param = {
+                    phonenum:phonenum,
+                    vertify_code:vertify_code,
+                    type:'1'
+                }
+                user_judgeUserByCon(param,function (ret,err) {
+                    consoledebug.log('user_judgeUserByCon ret is ---->>>'+JSON.stringify(ret))
+                    if(ret.result){
+                        if (sendtype == 'regis'||sendtype == 'forget') {
+                            openWin('set_password_win', './', {vertify_code:vertify_code,phonenum:phonenum,type:sendtype}, 1, false);
+                        }
+                        if (sendtype == 'smslogin') {
+                            var param = {
+                                account_type: 'tel_vertify_code',
+                                phonenum: phonenum,
+                                vertify_code: vertify_code,
+                                role:0
+                            }
+                            user_login(param, function (ret,err) {
+                                if (ret.result){
+                                    setStorage('user_info', ret.ret)
+                                    refreshIndex()
+                                    consoledebug.log("user_info register >>>>>>" + JSON.stringify(getStorage("user_info")))
+                                    closeToWin('root')
+                                }
+                            });
+                        }
+                    }else {
+                        showToast(ret.message)
+                    }
+                })
+            }
+        });
+
+    };
+    function refreshIndex() {
+        var jsfun = 'login();';
+        api.execScript({
+            name: 'root',
+            script: jsfun
+        });
+    }
+    function bindClickVerify() {
+            // var _this = $(this)
+            var phone_num = $('#phone_num').val().trim()
+            var param = {
+                phonenum: phone_num
+            }
+            sendVertifyCode(param, function (ret, err) {
+                consoledebug.log('send vertify code ret is : ' + JSON.stringify(ret))
+                if (ret.result) {
+                    toast(ret.ret)
+                    // openWin('sms_login_win', '../../html/login/', {type:'regis'}, 1, false);                _this.off(event)
+                    waitingForVerify()
+                } else {
+                    toast(JSON.stringify(err))
+                }
+            })
+
+    }
+</script>
+</html>

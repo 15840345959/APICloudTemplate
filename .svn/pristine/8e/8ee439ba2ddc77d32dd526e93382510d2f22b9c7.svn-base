@@ -1,0 +1,11 @@
+/*
+*
+* 配置路由
+* 调用接口
+*
+* */
+
+//用户注册
+function user_register(param, callBack) {
+    ajax(param, SERVER_URL + '/user/register', 'POST', callBack, true,'loading_title...','loading_text...')
+}

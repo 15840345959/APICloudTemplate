@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html class="white-bg">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>首页</title>
+    <link rel="stylesheet" type="text/css" href="../../style/aui.css"/>
+    <link rel="stylesheet" type="text/css" href="../../style/api.css"/>
+    <link rel="stylesheet" type="text/css" href="../../style/aui-flex.css"/>
+    <link rel="stylesheet" type="text/css" href="../../style/style.css"/>
+    <link rel="stylesheet" type="text/css" href="../../style/aui-slide.css"/>
+    <style>
+        .aui-bar-nav .aui-iconfont {
+            position: relative;
+            z-index: 20;
+            font-size: 0.9rem;
+            color: #000000 !important;
+            font-weight: 400;
+            line-height: 2.25rem;
+        }
+
+        .aui-searchbar-input input {
+            line-height: 1.6rem;
+            height: 1.6rem;
+        }
+
+        .aui-searchbar .aui-iconfont {
+            line-height: 1.6rem;
+            height: 1.6rem;
+        }
+        .vedio-cover-play-icon{
+            position: absolute;
+            width:1.5rem;
+            height:1.5rem;
+            top:1rem;
+            left:1rem;
+            z-index: 99;
+        }
+        .vedio-cover-icon{
+            position: relative;
+        }
+    </style>
+</head>
+<body class="white-bg">
+<div class="aui-padded-15">
+<textarea class="aui-margin-t-15 aui-padded-r-15 aui-margin-b-15" style="font-size: 14px"
+          placeholder="商品满足您的期待吗？分享一下购买心得吧" id="describe"></textarea>
+    <div id="media-content" class="aui-row-padded">
+        <div id="media_btn" class="aui-col-xs-3 aui-padded-b-10" onclick="selectPhoto()">
+            <img src="../../image/getpicture.png" class="img-icon" width="60" height="60">
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <div id="media-text-label" class="aui-hide aui-font-size-12 color">(长按删除)</div>
+</div>
+<div style="width: 100%;height: 10px;background-color: #eeeeee"></div>
+<script id="media-content-template" type="text/x-dot-template">
+    <div id="colimg_{{=it}}" class="aui-padded-b-15 aui-col-xs-3 aui-text-center clearfix">
+        <div style="width:60px;height:60px;" onclick="playMedia('img_{{=it}}')">
+            <img src="../../image/play.png" class="vedio-cover-play-icon aui-hide" id="playimg_{{=it}}"/>
+
+            <img id="img_{{=it}}" width="60" height="60" class="img-icon media-long-press vedio-cover-icon">
+        </div>
+    </div>
+</script>
+</body>
+<script type="text/javascript" src="../../script/common/jquery.min.js"></script>
+<script type="text/javascript" src="../../script/common/api.js"></script>
+<script type="text/javascript" src="../../script/common/doT.min.js"></script>
+<script type="text/javascript" src="../../script/common/aui-tab.js"></script>
+<script type="text/javascript" src="../../script/common/common.js"></script>
+<script type="text/javascript" src="../../script/common/api-common.js"></script>
+<script type="text/javascript" src="../../script/common/api-manager.js"></script>
+<script type="text/javascript" src="../../script/project/project-api.js"></script>
+<script type="text/javascript" src="../../script/common/doT.min.js"></script>
+<script type="text/javascript" src="../../script/project/constant-self.js"></script>
+<script type="text/javascript">
+    var img_count = 0; //图片数量
+    var image_arr = [] //图片数组
+    var vedio_arr = [] //视频数组
+    // var param_upload = []  //上传参数数组
+    //入口函数
+    apiready = function () {
+        //初始化方法
+        init()
+    }
+    //初始化方法
+    function init() {
+        //页面初始化的一些操作
+        //数组根据实际情况而定，可以拼到一起，也可以拆开（可参考）
+        image_arr.push({img:[]})
+        vedio_arr.push({vedio:[]})
+        consoledebug.log('image_arr ------->>'+JSON.stringify(image_arr))
+        consoledebug.log('vedio_arr ------->>'+JSON.stringify(vedio_arr))
+    }
+    //上传照片
+    function selectPhoto() {
+        api.actionSheet({
+            cancelTitle: '取消',
+            buttons: ['拍摄照片', '拍摄视频', '打开相册']
+        }, function (ret, err) {
+            var sourceType=''
+            var mediaValue=''
+            if (ret.buttonIndex == 1) {
+                sourceType = 'camera'
+                mediaValue = 'pic'
+                openPhotoOrAlbumbase(sourceType, handleAddPhoto, 'img_' + img_count, mediaValue)
+            } else if (ret.buttonIndex == 2) {
+                sourceType = 'camera'
+                mediaValue = 'video'
+                openPhotoOrAlbumbase(sourceType, handleAddPhoto, 'img_' + img_count, mediaValue)
+            } else if (ret.buttonIndex == 3) {
+                sourceType = 'album'
+                mediaValue = 'all'
+                // openPhotoOrAlbumbase(sourceType, handleAddPhoto, 'img_' + img_count,mediaValue)
+                openUIAlbumBrowser(sourceType, handleAddPhoto, 'img_')
+            } else {
+                return;
+            }
+        });
+    }
+    //回调 ， dom_id为 id加索引（img_'id'）
+    function handleAddPhoto(ret, err, dom_id) {
+        var interText = doT.template($("#media-content-template").text());
+        $("#media_btn").before(interText(img_count++));
+        if (ret) {
+            consoledebug.log('handleAddPhoto ret is -->>>>' + JSON.stringify(ret))
+            var img_url = ret.data;
+
+            var fileType = determineTheFileTypeBySuffix(img_url)
+            // var file_push = {
+            //     'fileType': fileType,
+            //     'filePath': img_url,
+            //     'status': true,
+            //     'addInfo': ret,   // 这个是后加的，如果是视频需要第一帧，但是如果改的话所有上传的地方都需要改，为了改的地方尽可能少，就直接把返回来的参数都赋值了，其他页也只要把这行复制粘贴一下就行了
+            // }
+            var file_key = getQiniuKey() + "." + getFileType(img_url);
+            var qiniuUpfile = api.require('qiniuUpfile')
+            qiniuUpfile.upfile({
+                file: img_url,
+                name: file_key
+            }, function (ret, err) {
+                if (ret.oper === "complete") {
+
+                    if (fileType == 'pic') {
+                        var img_url_v = getImgRealUrl(ret.info.key);
+                        img_url_v = qiniuUrlTool(img_url_v,'commentpic')
+                        //将选择的照片传入数组，供传参用
+                        image_arr[0].img.push(img_url_v)
+                        showLable()// 显示或隐藏提示语
+                        $("#" + dom_id).attr("src", img_url);
+                        $("#" + dom_id).attr("media-play", img_url);
+                        $("#" + dom_id).attr("media-type", fileType);
+                        consoledebug.log("数组 image_arr:" + JSON.stringify(image_arr));
+                        consoledebug.log('getImgRealUrl is::'+JSON.stringify(img_url_v))
+                        $("#"+dom_id).attr("src", img_url_v);
+                        consoledebug.log('放上的图片路径 是:'+JSON.stringify($("#"+dom_id).attr("src")))
+
+                    }
+                    else {
+
+                        var img_url_v = getImgRealUrl(ret.info.key);
+                        consoledebug.log('getImgRealUrl ret vedio ---->>'+JSON.stringify(img_url_v))
+                        //将视频路径放入数组，供传参用
+                        vedio_arr[0].vedio.push(img_url_v)
+                        showLable()// 显示或隐藏提示语
+                        consoledebug.log("数组 vedio_arr:" + JSON.stringify(vedio_arr));
+                        /*
+                        * 截取视频任意时间点静态图
+                        */
+                        screenShots(img_url_v, function (ret, err) {
+                            consoledebug.log('screenShots ret is --->>>' + JSON.stringify(ret))
+                            if (ret.status) {
+                                $("#" + dom_id).attr("src", ret.path);
+                                $("#" + dom_id).attr("media-play", img_url_v);
+                                $("#" + dom_id).attr("media-type", fileType);
+                                $('#play' + dom_id).removeClass('aui-hide')
+                            }
+                        })
+                    }
+
+                }else if (ret.oper === "progress") {
+                    consoledebug.log('qiniuUpfile progress ret is : ' + JSON.stringify(ret))
+                }
+
+            })
+
+        }
+
+        $("#col" + dom_id).on({
+            touchstart: function (e) {
+                // 长按事件触发
+                timeOutEvent = setTimeout(function () {
+                    timeOutEvent = 0;
+                    selectDel(dom_id.substr(4),fileType)
+                }, 300);
+                //长按300毫秒
+                // e.preventDefault();
+            },
+            touchmove: function () {
+                clearTimeout(timeOutEvent);
+                timeOutEvent = 0;
+            },
+            touchend: function () {
+                clearTimeout(timeOutEvent);
+                if (timeOutEvent != 0) {
+                    // 点击事件
+                    // location.href = '/a/live-rooms.html';
+                    playMedia(dom_id)
+                }
+                showLable() // 显示或隐藏提示语
+                return false;
+            }
+        })
+
+    }
+
+
+    //删除图片 index为索引 fileType为类型（图片还是视频）
+    function selectDel(index,fileType) {
+        consoledebug.log('selectDel index is : ' + index)
+        consoledebug.log('selectDel img_count is : ' + img_count)
+        api.actionSheet({
+            cancelTitle: '取消',
+            destructiveTitle: '删除',
+        }, function (ret, err) {
+            console.log("ret" + JSON.stringify(ret));
+            if (ret.buttonIndex == 1) {
+                cleanImg(index,fileType)
+            }
+        })
+
+    }
+
+    //删除图片 index为索引 fileType为类型（图片还是视频）
+    function cleanImg(index,fileType) {
+        consoledebug.log("cleanImg imageArr[" + index + "] is :" + JSON.stringify(index))
+        //图片数组根据下标删除
+        $("#colimg_" + index).remove();
+
+        if (fileType == 'pic') {
+            let ind = image_arr.indexOf(['img'])
+            image_arr[0]['img'].splice(ind, 1);
+            consoledebug.log('删除后的图片数组 image_arr 为 ：'+JSON.stringify(image_arr))
+        }else {
+            let ind = vedio_arr.indexOf(['vedio'])
+            vedio_arr[0]['vedio'].splice(ind, 1);
+            consoledebug.log('删除后的视频数组 vedio_arr 为 ：'+JSON.stringify(vedio_arr))
+
+        }
+        showLable()// 显示或隐藏提示语
+    }
+
+    function playMedia(id) {
+        event.stopPropagation(); // 阻止事件冒泡
+        var playSrc = $("#" + id).attr("media-play");
+        var playType = $("#" + id).attr("media-type");
+        consoledebug.log("playMedia playSrc is " + playSrc)
+        if (playType == 'pic') {
+            playImage(playSrc)
+        }
+        else if (playType == 'video') {
+            playVideo(playSrc)
+        }
+    }
+    // 显示或隐藏提示语
+    function showLable() {
+        if (image_arr[0]['img'].length>0||vedio_arr[0]['vedio'].length>0) {
+            $('#media-text-label').removeClass('aui-hide')
+        }else {
+            $('#media-text-label').addClass('aui-hide')
+        }
+    }
+</script>
+</html>

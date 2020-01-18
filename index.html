@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>首页</title>
+    <link rel="stylesheet" type="text/css" href="./style/aui.css"/>
+    <link rel="stylesheet" type="text/css" href="./style/api.css"/>
+    <link rel="stylesheet" type="text/css" href="./style/aui-flex.css"/>
+    <link rel="stylesheet" type="text/css" href="./style/style.css"/>
+    <style>
+        .main-bg {
+            width: 100%;
+            background-repeat: no-repeat;
+            background-position: top;
+            background-size: 100%;
+        }
+
+        .aui-bar-nav .aui-iconfont {
+            position: relative;
+            z-index: 20;
+            font-size: 0.9rem;
+            color: #000000 !important;
+            font-weight: 400;
+            line-height: 2.25rem;
+        }
+
+        .aui-bar-tab-label {
+            padding-bottom: 5px;
+        }
+
+        .header {
+            display: none;
+        }
+
+        .active {
+            display: block;
+        }
+
+        .aui-searchbar-input {
+            background-color: #f3f3f3;
+        }
+
+        .main-bg {
+            width: 100%;
+            background-repeat: no-repeat;
+            background-position: top;
+            background-size: 100%;
+        }
+
+        #tab_index, #tab_service, #tab_center {
+            margin: auto;
+        }
+
+        .aui-dialog-header {
+            padding: 0.5rem 0.75rem 0 0.75rem;
+            text-align: center;
+            font-size: 1rem;
+            color: #04BF94;
+        }
+
+        .c {
+            color: #5a494c;
+        }
+
+        html, body {
+            line-height: 20px;
+            height: 100% !important;
+            background-color: #f1f1f1;
+        }
+
+        .aui-border-t {
+            border: none;
+            background-size: 100% 1px;
+
+            background-repeat: no-repeat;
+            background-position: top;
+            background-image: linear-gradient(0, #dddddd, #dddddd 50%, transparent 50%);
+            background-image: -webkit-linear-gradient(90deg, #dddddd, #dddddd 50%, transparent 50%);
+        }
+
+        .aui-tab-item {
+            width: 100%;
+            height: 100% !important;
+
+            position: relative;
+            font-size: 0.7rem;
+            text-align: center;
+            color: #212121;
+            margin-left: -1px;
+            -webkit-box-flex: 1;
+            box-flex: 1;
+        }
+    </style>
+</head>
+<body class="white-bg">
+<div id="header">
+    <div id="header_shouye" class="header">
+        <header id="shouye_header" class="aui-bar aui-bar-nav main-bg" style="border-bottom: 1px #f1f1f1 solid">
+            <i class="aui-iconfont aui-icon-location aui-pull-left aui-font-size-14"></i>
+            <i class="aui-iconfont aui-pull-left aui-text-black aui-font-size-14" id="city" style="margin-left: -15px"></i>
+            <div id="shouye_title" class="aui-title aui-text-center aui-text-black font-bold">首页</div>
+        </header>
+    </div>
+    <div class="header">
+    <header id="shopcar_header" class="aui-bar aui-bar-nav main-bg" style="border-bottom: 1px #f1f1f1 solid;padding-bottom: 45px">
+        <div id="shopcar_title" style="line-height: 2.25rem;" class="aui-title aui-text-center aui-text-black font-bold">订单</div>
+
+        <!--<i class="aui-iconfont aui-icon-question aui-pull-right"></i>-->
+    </header>
+    </div>
+    <div class="header">
+        <header id="cart_header" class="aui-bar aui-bar-nav main-bg" style="border-bottom: 1px #f1f1f1 solid;padding-bottom: 45px">
+            <div id="cart_title" class="aui-title aui-text-center aui-text-black font-bold">购物车</div>
+            <!--<i class="aui-iconfont aui-icon-more aui-pull-right aui-text-black"></i>-->
+
+        </header>
+    </div>
+    <div class="header">
+    <header id="mine_header" class="aui-bar aui-bar-nav main-bg" style="border-bottom: 1px #f1f1f1 solid;padding-bottom: 45px">
+        <div id="mine_title" class="aui-title aui-text-center aui-text-black font-bold">我的</div>
+        <!--<i class="aui-iconfont aui-icon-more aui-pull-right aui-text-black"></i>-->
+
+    </header>
+    </div>
+</div>
+<footer class="aui-bar aui-bar-tab aui-border-t" id="footer">
+    <!--<footer class="aui-bar aui-bar-tab" id="footer" style="background-color: #ff4d03"></footer>-->
+    <div class="aui-bar-tab-item tab aui-text-grey tab-first" onclick="openTap(this, 0)" tapmode>
+        <img id="tab_index" src="image/indexImg/icon_home.png" width="22" height="22" alt="">
+
+        <div class="" style="font-size: 11px;margin-top: -6px;margin-bottom: -5px" id="footer_home">首页</div>
+    </div>
+
+    <div class="aui-bar-tab-item tab aui-text-grey" onclick="openTap(this, 1)" tapmode>
+        <img id="tab_order" src="image/indexImg/dingdan.png" width="22" height="22" alt="">
+
+        <div class="" style="font-size: 11px;margin-top: -6px;margin-bottom: -5px" id="footer_order">订单</div>
+    </div>
+
+    <div class="aui-bar-tab-item tab aui-text-grey" onclick="openTap(this, 2)" tapmode>
+        <img id="tab_shopcar" src="image/indexImg/footer_off.png" width="22" height="22" alt="">
+
+        <div class="" style="font-size: 11px;margin-top: -6px;margin-bottom: -5px" id="footer_shopcar">购物车</div>
+    </div>
+
+    <div class="aui-bar-tab-item tab aui-text-grey" onclick="openTap(this, 3)" tapmode>
+        <img id="tab_mine" src="image/indexImg/my.png" width="22" height="22" alt="">
+
+        <div class="" style="font-size: 11px;margin-top: -6px;margin-bottom: -5px" id="footer_laboratory">我的</div>
+        <div id="message_num" class="aui-badge aui-hide"></div>
+    </div>
+
+
+</footer>
+
+</body>
+
+
+
+<script type="text/javascript" src="./script/common/api.js"></script>
+<script type="text/javascript" src="./script/common/jquery.min.js"></script>
+<script type="text/javascript" src="./script/common/common.js"></script>
+<script type="text/javascript" src="./script/common/api-common.js"></script>
+<script type="text/javascript" src="./script/common/aui-dialog.js"></script>
+<script type="text/javascript" src="./script/common/aui-tab.js"></script>
+<script type="text/javascript" src="./script/common/api-manager.js"></script>
+<script type="text/javascript" src="./script/project/project-api.js"></script>
+<script type="text/javascript" src="./script/common/aui-slide.js"></script>
+<script type="text/javascript" src="./script/common/doT.min.js"></script>
+<script type="text/javascript" src="./script/common/aui-toast.js"></script>
+<script type="text/javascript">
+
+    var isFrm0Open = false         //是否打开首页
+    var isFrm1Open = false       //是否打开购物车
+    var isFrm2Open = false;      //是否打开我的
+
+    var frm_index = -1        //index索引，初始时为-1
+
+    var footer_pos = null;      //footer位置
+
+    //入口函数
+
+    apiready = function () {
+        footer_pos = _fixTabBar('footer')       //确定footer位置
+        //用户是否登录，如果没有登录，则跳转至登录页面
+        if (isHasUserInfo()) {
+            consoledebug.log("login_getTime ret is -->" + JSON.stringify("has info"));
+            /*  clearStorage();*/
+        } else {
+            openWinNotSlidBack('login', './html/login/', {}, 2, true);
+            return false;
+        }
+
+        // 监听返回事件
+        api.addEventListener({
+            name: 'keyback'
+        }, function (ret, err) {
+            //进行提示
+            dialog_alert("", '确定退出吗', '退出', '取消', function (ret, err) {
+                if (ret.eventType === 'left') {
+                    closeDialogBox('alert')
+                    api.closeWidget({
+                        id: api.appId,
+                        retData: {
+                            name: 'closeWidget'
+                        },
+                        silent: true
+                    })
+                }
+                if (ret.eventType === 'right') {
+                    closeDialogBox('alert')
+                }
+            })
+        })
+        init()
+    }
+
+
+    //登录成功，供外部script调用
+    function login() {
+        sendEvent("login_")
+        closeToWin('root')
+        showToast('登陆成功')
+        init()
+    }
+
+    //注册成功，，供外部script调用
+    function register() {
+        sendEvent("login_")
+        closeToWin('root')
+        showToast('注册成功')
+        init()
+    }
+
+    //重置密码成功，，供外部script调用
+    function forget() {
+        sendEvent("login_")
+        closeToWin('root')
+        init()
+    }
+
+    //初始化页面
+    function init() {
+        //打开首页
+        openTap($('#footer div').first(), 0)
+    }
+
+
+    //点击底部tap栏切换
+    function openTap(el, index) {
+        consoledebug.log('openTap index is : ' + JSON.stringify(index))
+        var headers = $('header')
+//        hideAllFrame();
+        if (index !== frm_index) {
+            switch (index) {
+                case 0:     //首页
+                    switchFooterBtn(el, index)
+                    //如果frm0已经打开，则showFrame即可
+                    if (isFrm0Open == true) {
+                        showFrame('index_shouye.html');
+                        isFrm0Open = true;
+                    } else {
+                        api.setFrameAttr({ // 隐藏内容层
+                            name: 'my_order_frm',
+                            hidden: true,
+                        });
+                        api.setFrameAttr({ // 隐藏内容层
+                            name: 'mine',
+                            hidden: true,
+                        });
+                        api.setFrameAttr({ // 隐藏内容层
+                            name: 'shop_cart',
+                            hidden: true,
+                        });
+                        api.setFrameAttr({ // 隐藏内容层
+                            name: 'root',
+                            hidden: true,
+                        });
+                        var headerPos = _fixStatusBar(headers.eq(index).attr('id'))
+                        consoledebug.log('headerPos is : ' + JSON.stringify(headerPos))
+                        openFrameWithHeaderFooter('index_shouye', './html/index/', headerPos.h, footer_pos.h, {}, false)
+                        // openFrame('index_shouye', './html/index/',{},false)
+                    }
+                    break
+                case 1:     //订单
+                    switchFooterBtn(el, index)
+                    //如果frm1已经打开，则showFrame即可
+                    if (isFrm1Open == true) {
+                        showFrame('my_order_frm.html');
+                        isFrm1Open = true;
+                    } else {
+//
+                        api.setFrameAttr({ // 隐藏内容层
+                            name: 'mine',
+                            hidden: true,
+                        });
+                        api.setFrameAttr({ // 隐藏内容层
+                            name: 'index_shouye',
+                            hidden: true,
+                        });
+                        api.setFrameAttr({ // 隐藏内容层
+                            name: 'shop_cart',
+                            hidden: true,
+                        });
+                        api.setFrameAttr({ // 隐藏内容层
+                            name: 'root',
+                            hidden: true,
+                        });
+                        var headerPos = _fixStatusBar(headers.eq(index).attr('id'))
+                        consoledebug.log('headerPos is : ' + JSON.stringify(headerPos))
+                        openFrameWithHeaderFooter('my_order_frm', './html/index/', headerPos.h, footer_pos.h, {}, true)
+
+                    }
+                    break
+                case 2:     //购物车
+                    switchFooterBtn(el, index)
+                    //如果frm1已经打开，则showFrame即可
+                    if (isFrm2Open == true) {
+                        // closeFrame("my")
+                        showFrame('shop_cart.html');
+                        isFrm2Open = true;
+                    } else {
+                        api.setFrameAttr({ // 隐藏内容层
+                            name: 'index_shouye',
+                            hidden: true,
+                        });
+                        api.setFrameAttr({ // 隐藏内容层
+                            name: 'my_order_frm',
+                            hidden: true,
+                        });
+                        api.setFrameAttr({ // 隐藏内容层
+                            name: 'mine',
+                            hidden: true,
+                        });
+                        api.setFrameAttr({ // 隐藏内容层
+                            name: 'root',
+                            hidden: true,
+                        });
+
+                        var headerPos = _fixStatusBar(headers.eq(index).attr('id'))
+                        consoledebug.log('headerPos is : ' + JSON.stringify(headerPos))
+                        openFrameWithHeaderFooter('mine', './html/index/', headerPos.h, footer_pos.h, {}, false)
+
+                    }
+                    break
+                case 3:     //我的
+                    switchFooterBtn(el, index)
+                    //如果frm1已经打开，则showFrame即可
+                    if (isFrm2Open == true) {
+                        // closeFrame("my")
+                        showFrame('mine.html');
+                        isFrm2Open = true;
+                    } else {
+                        api.setFrameAttr({ // 隐藏内容层
+                            name: 'index_shouye',
+                            hidden: true,
+                        });
+                        api.setFrameAttr({ // 隐藏内容层
+                            name: 'my_order_frm',
+                            hidden: true,
+                        });
+                        api.setFrameAttr({ // 隐藏内容层
+                            name: 'shop_cart',
+                            hidden: true,
+                        });
+                        api.setFrameAttr({ // 隐藏内容层
+                            name: 'root',
+                            hidden: true,
+                        });
+                        var headerPos = _fixStatusBar(headers.eq(index).attr('id'))
+                        consoledebug.log('headerPos is : ' + JSON.stringify(headerPos))
+                        openFrameWithHeaderFooter('mine', './html/index/', headerPos.h, footer_pos.h, {}, false)
+
+                    }
+                    break
+                default:
+                    break
+            }
+        }
+
+    }
+
+    //根据点击的地步tap栏切换颜色
+    function switchFooterBtn(el, index) {
+        $('.tab').each(function () {
+            $(this).removeClass('aui-text-black')
+            $(this).addClass('c')
+        })
+        $(el).addClass('aui-text-black')
+        $(el).removeClass('c')
+        $('.header').each(function () {
+            $(this).removeClass('active')
+        })
+        $('.header').eq(index).addClass('active')
+        resetIcons(index);      //重置图标
+        frm_index = index;      //设定当前frm的index值
+    }
+
+    /*
+     * 隐藏全部的framegroup的页面
+     *
+     * By TerryQi
+     *
+     * 2018-04-29
+     */
+    function hideAllFrame() {
+        api.setFrameAttr({
+            name: 'index_frm',
+            hidden: true
+        })
+        api.setFrameAttr({
+            name: 'company_frm',
+            hidden: true
+        })
+        api.setFrameAttr({
+            name: 'message_frm',
+            hidden: true
+        })
+        api.setFrameAttr({
+            name: 'my_frm',
+            hidden: true
+        })
+    }
+
+    function showFrame(name) {
+        api.setFrameAttr({
+            name: name,
+            hidden: false
+        })
+    }
+
+    /*
+     * 切换底部的图标
+     *
+     * By TerryQi
+     *
+     * 2018-04-29
+     */
+    function resetIcons(index) {
+        $("#tab_index").attr('src', './image/indexImg/icon_home.png')
+        $("#tab_order").attr('src', './image/indexImg/dingdan.png')
+        $("#tab_mine").attr('src', './image/indexImg/my.png')
+        $("#tab_shopcar").attr('src', './image/indexImg/footer_off.png')
+        switch (index) {
+            case 0:
+                $("#tab_index").attr('src', './image/indexImg/icon_home_pre.png')
+
+                break;
+            case 1:
+                $("#tab_order").attr('src', './image/indexImg/dingdan_black.png')
+
+                break;
+            case 2:
+                $("#tab_shopcar").attr('src', './image/indexImg/footer_on.png')
+
+                break;
+            case 3:
+                $("#tab_mine").attr('src', './image/indexImg/people_fill.png')
+
+                break;
+            default:
+                break
+        }
+    }
+
+
+
+</script>
+</html>

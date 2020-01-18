@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="23b9069c-516f-4742-ab27-a2900deef3f5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/script/common" afterDir="true" />
+      <change afterPath="$PROJECT_DIR$/script/common/api-common.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/script/common/api-manager.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/script/common/api.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/script/common/common.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/script/common/doT.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/script/common/echarts.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/script/common/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/script/common/md5.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/script/common/swiper.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/script/project" afterDir="true" />
+      <change afterPath="$PROJECT_DIR$/style" afterDir="true" />
+      <change afterPath="$PROJECT_DIR$/style/common" afterDir="true" />
+      <change afterPath="$PROJECT_DIR$/style/common/common.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/style/project" afterDir="true" />
+      <change afterPath="$PROJECT_DIR$/third-part" afterDir="true" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0" afterDir="true" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/css" afterDir="true" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/css/api.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/css/aui-flex.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/css/aui-iconfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/css/aui-pull-refresh.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/css/aui-skin-night.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/css/aui-skin.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/css/aui-slide.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/css/aui.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/feature" afterDir="true" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/html" afterDir="true" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/html/actionsheet_frm.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/html/actionsheet_win.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/html/btn_bar_frm.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/html/btn_bar_win.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/html/button_frm.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/html/button_win.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/html/card_demo_list_frm.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/html/card_list_frm.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/html/card_list_win.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/html/chat_frm.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/html/chat_win.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/html/club_win.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/html/collapse_frm.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/html/collapse_win.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/html/demo1_frm.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/html/demo_bbs_frm.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/html/demo_list_scroll_frm.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/html/demo_member_frm.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/html/demo_moubao_frm.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/html/demo_moubao_win.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/html/demo_my_frm.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/html/demo_my_win.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/html/demo_news_today_frm.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/html/demo_news_today_win.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/html/demo_order_frm.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/html/demo_order_win.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/html/demo_wechat_circle_frm.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/html/demo_wechat_circle_win.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/html/demo_wechat_frm.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/html/demo_wechat_win.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/html/demo_zhihu_frm.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/html/demo_zhihu_win.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/html/dialog_frm.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/html/dialog_win.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/html/flex_frm.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/html/flex_win.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/html/footer_bar_frm.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/html/footer_bar_more_frm.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/html/footer_bar_more_win.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/html/footer_bar_win.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/html/form_frm.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/html/from_win.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/html/grid_frm.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/html/grid_win.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/html/header_frm.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/html/header_win.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/html/iconfont_frm.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/html/iconfont_win.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/html/index_frm.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/html/info_frm.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/html/info_win.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/html/label_frm.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/html/label_win.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/html/lazyload_frm.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/html/lazyload_win.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/html/list_frm.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/html/list_night_frm.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/html/list_night_win.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/html/list_swipe_frm.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/html/list_swipe_win.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/html/list_win.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/html/popup_frm.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/html/popup_win.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/html/progress_frm.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/html/progress_win.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/html/pull_refresh_frm.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/html/pull_refresh_win.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/html/radio_frm.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/html/radio_win.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/html/range_frm.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/html/range_win.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/html/scroll_frm.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/html/scroll_win.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/html/searchbar_frm.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/html/searchbar_win.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/html/sharebox_frm.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/html/sharebox_win.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/html/slide_frm.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/html/slide_win.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/html/tab_frm.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/html/tab_win.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/html/text_frm.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/html/text_win.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/html/timeline_frm.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/html/timeline_win.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/html/tips_frm.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/html/tips_win.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/html/toast_frm.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/html/toast_win.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/icon" afterDir="true" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/icon/icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/icon/icon150x150.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/image" afterDir="true" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/image/apicloud-bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/image/aui-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/image/demo" afterDir="true" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/image/demo/1.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/image/demo/2.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/image/demo/3.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/image/demo1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/image/demo2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/image/demo3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/image/demo4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/image/demo5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/image/demo6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/image/error-img.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/image/f1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/image/f2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/image/f3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/image/f5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/image/gril.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/image/hongbao.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/image/l1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/image/l2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/image/l3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/image/liulangnan.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/image/load-img.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/image/share" afterDir="true" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/image/share/message.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/image/share/qq-friend.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/image/share/qq-weibo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/image/share/qq.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/image/share/qzone.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/image/share/sina-weibo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/image/share/wx-circle.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/image/share/wx.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/launch" afterDir="true" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/launch/launch1080x1920.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/res" afterDir="true" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/script" afterDir="true" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/script/api.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/script/aui-actionsheet.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/script/aui-collapse.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/script/aui-dialog.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/script/aui-lazyload.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/script/aui-list-swipe-backup.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/script/aui-list-swipe.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/script/aui-popup-new.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/script/aui-popup.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/script/aui-pull-refresh.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/script/aui-range.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/script/aui-scroll.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/script/aui-sharebox.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/script/aui-skin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/script/aui-slide.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/script/aui-tab.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/script/aui-toast.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/third-part/aui-v2.1.0/wgt" afterDir="true" />
+      <change beforePath="$PROJECT_DIR$/css" beforeDir="true" />
+      <change beforePath="$PROJECT_DIR$/html/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/html/main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/script/api.js" beforeDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/script/common/api.js">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/third-part/aui-v2.1.0/css/api.css">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="57" column="41" lean-forward="true" selection-start-line="57" selection-start-column="41" selection-end-line="57" selection-end-column="41" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/html/main.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="33" column="31" lean-forward="true" selection-start-line="33" selection-start-column="31" selection-end-line="33" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/html/main.html" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
+    <option name="width" value="1920" />
+    <option name="height" value="1057" />
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Remove" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="标准模板项目" type="b2602c69:ProjectViewProjectNode" />
+              <item name="标准模板项目" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="标准模板项目" type="b2602c69:ProjectViewProjectNode" />
+              <item name="标准模板项目" type="462c0819:PsiDirectoryNode" />
+              <item name="html" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="标准模板项目" type="b2602c69:ProjectViewProjectNode" />
+              <item name="标准模板项目" type="462c0819:PsiDirectoryNode" />
+              <item name="icon" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="标准模板项目" type="b2602c69:ProjectViewProjectNode" />
+              <item name="标准模板项目" type="462c0819:PsiDirectoryNode" />
+              <item name="image" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="标准模板项目" type="b2602c69:ProjectViewProjectNode" />
+              <item name="标准模板项目" type="462c0819:PsiDirectoryNode" />
+              <item name="launch" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="标准模板项目" type="b2602c69:ProjectViewProjectNode" />
+              <item name="标准模板项目" type="462c0819:PsiDirectoryNode" />
+              <item name="script" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="标准模板项目" type="b2602c69:ProjectViewProjectNode" />
+              <item name="标准模板项目" type="462c0819:PsiDirectoryNode" />
+              <item name="script" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="标准模板项目" type="b2602c69:ProjectViewProjectNode" />
+              <item name="标准模板项目" type="462c0819:PsiDirectoryNode" />
+              <item name="style" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="标准模板项目" type="b2602c69:ProjectViewProjectNode" />
+              <item name="标准模板项目" type="462c0819:PsiDirectoryNode" />
+              <item name="style" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="标准模板项目" type="b2602c69:ProjectViewProjectNode" />
+              <item name="标准模板项目" type="462c0819:PsiDirectoryNode" />
+              <item name="third-part" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="标准模板项目" type="b2602c69:ProjectViewProjectNode" />
+              <item name="标准模板项目" type="462c0819:PsiDirectoryNode" />
+              <item name="third-part" type="462c0819:PsiDirectoryNode" />
+              <item name="aui-v2.1.0" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="标准模板项目" type="b2602c69:ProjectViewProjectNode" />
+              <item name="标准模板项目" type="462c0819:PsiDirectoryNode" />
+              <item name="third-part" type="462c0819:PsiDirectoryNode" />
+              <item name="aui-v2.1.0" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/script" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration" cleanupOnStartRun="true">
+    <configuration>$USER_HOME$/.subversion</configuration>
+  </component>
+  <component name="SvnFileUrlMappingImpl">
+    <option name="myMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="$PROJECT_DIR$" />
+          <option name="myCopyRoot" value="$PROJECT_DIR$" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+    <option name="myMoreRealMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="$PROJECT_DIR$" />
+          <option name="myCopyRoot" value="$PROJECT_DIR$" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="23b9069c-516f-4742-ab27-a2900deef3f5" name="Default Changelist" comment="" />
+      <created>1562826659366</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1562826659366</updated>
+      <workItem from="1562826661820" duration="716000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="716000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="23" width="1920" height="1057" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Favorites" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24960506" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/script/common/api.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/third-part/aui-v2.1.0/css/api.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="57" column="41" lean-forward="true" selection-start-line="57" selection-start-column="41" selection-end-line="57" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/html/main.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="33" column="31" lean-forward="true" selection-start-line="33" selection-start-column="31" selection-end-line="33" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html class="white-bg">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="../../style/aui.css"/>
+    <link rel="stylesheet" type="text/css" href="../../style/api.css"/>
+    <link rel="stylesheet" type="text/css" href="../../style/aui-flex.css"/>
+    <link rel="stylesheet" type="text/css" href="../../style/style.css"/>
+    <style>
+        .main-bg {
+            width: 100%;
+            background-repeat: no-repeat;
+            background-position: top;
+            background-size: 100%;
+        }
+        .aui-bar-nav .aui-iconfont {
+            position: relative;
+            z-index: 20;
+            font-size: 0.9rem;
+            color: #000000 !important;
+            font-weight: 400;
+            line-height: 2.25rem;
+        }
+        .aui-btn-block.aui-btn-sm {
+            font-size: 0.7rem;
+            height: 2.5rem;
+            line-height: 1.85rem;
+        }
+    </style>
+</head>
+<body class="white-bg">
+
+<header id="header" class="aui-bar aui-bar-nav color-bg" style="padding-top: 1rem;">
+    <a class="aui-pull-left aui-btn" onclick="closeWin()">
+        <span class="aui-iconfont aui-icon-left"></span>
+    </a>
+</header>
+
+
+
+</body>
+<script type="text/javascript" src="../../script/common/api.js"></script>
+<script type="text/javascript" src="../../script/common/jquery.min.js"></script>
+<script type="text/javascript" src="../../script/common/common.js"></script>
+<script type="text/javascript" src="../../script/common/api-common.js"></script>
+<script type="text/javascript" src="../../script/common/api-manager.js"></script>
+<script type="text/javascript">
+    //入口函数
+    apiready = function () {
+        _fixStatusBar('header')
+        openFrame('set_password_frm', './', true,{param:getPageParam()},0)
+    }
+
+
+
+</script>
+</html>
+
+

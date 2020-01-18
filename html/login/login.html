@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html style="background-color: white">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>登录</title>
+    <link rel="stylesheet" type="text/css" href="../../style/api.css"/>
+    <link rel="stylesheet" type="text/css" href="../../style/style.css"/>
+    <link rel="stylesheet" type="text/css" href="../../style/aui.css"/>
+    <link rel="stylesheet" type="text/css" href="../../style/aui-flex.css"/>
+    <link rel="stylesheet" type="text/css" href="../../style/intlTelInput.css"/>
+
+    <style>
+        html, body {
+            background: white;
+        }
+
+        input::-webkit-input-placeholder {
+            padding-top: 5px;
+        }
+
+        .main-font-color {
+            color: #0075AE;
+        }
+
+        .main-bg-color {
+            background-color: #0075AE;
+        }
+
+        .login-div {
+            width: 300px;
+        }
+
+        .dark-font {
+            color: #666666;
+        }
+
+        input[type="number"],
+        input[type="password"] {
+            -webkit-appearance: none;
+            line-height: normal;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            -webkit-transform: translateZ(0);
+            -moz-transform: translateZ(0);
+            -ms-transform: translateZ(0);
+            -o-transform: translateZ(0);
+            transform: translateZ(0);
+        }
+
+        .aui-text-right {
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            -webkit-user-select: none;
+            -webkit-tap-highlight-color: transparent;
+            outline: none;
+        }
+
+        .login__submit {
+            position: relative;
+            width: 100%;
+            height: 3.6rem;
+            margin: 2rem 0 1rem;
+
+            background-color: #ffffff;
+            background-repeat: no-repeat;
+            background-size: 100%;
+            font-size: 1.5rem;
+            border-radius: 3rem;
+            cursor: pointer;
+            overflow: hidden;
+            -webkit-transition: width 0.3s 0.15s, font-size 0.1s 0.15s;
+            transition: width 0.3s 0.15s, font-size 0.1s 0.15s;
+        }
+
+        .register__submit {
+            position: relative;
+            width: 100%;
+            height: 4rem;
+            margin: 0 0;
+
+            background-color: #ffffff;
+            background-repeat: no-repeat;
+            background-size: 100%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            overflow: hidden;
+            -webkit-transition: width 0.3s 0.15s, font-size 0.1s 0.15s;
+            transition: width 0.3s 0.15s, font-size 0.1s 0.15s;
+        }
+
+        .aui-tab-item.aui-active-login {
+            color: black;
+            border-bottom: 2px solid #ff6b4e;
+        }
+
+        .aui-margin-r-30 {
+            margin-right: 30px;
+        }
+
+        .color {
+            color: #ff6b4e;
+        }
+
+        .mclear {
+            border: 0; /*去掉button按钮的棱角(边框)   */
+            background: url(../../image/loginImg/cancel_text_new.png) no-repeat; /* 按钮的背景图片  */
+            position: absolute;
+            right: 40px;
+            top: 188px;
+            width: 18px;
+            height: 18px; /* 按钮的大小 */
+            background-size: 18px 18px; /* 背景图片的大小  */
+        }
+
+        .mclearp {
+            border: 0; /*去掉button按钮的棱角(边框)   */
+            background: url(../../image/loginImg/cancel_text_new.png) no-repeat; /* 按钮的背景图片  */
+            position: absolute;
+            right: 40px;
+            top: 278px;
+            width: 18px;
+            height: 18px; /* 按钮的大小 */
+            background-size: 18px 18px; /* 背景图片的大小  */
+        }
+        .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: -80px 0 0 -135px;
+            padding: 10px;
+            text-align: center;
+        }
+        .container p{
+            font-family: "微软雅黑";
+            color: #888;
+        }
+        .val-box {
+            display: inline-block;
+            height: 40px;
+            width: 216px;
+            text-align: center;
+            position: relative;
+            background: #FFFFFF;
+        }
+
+        .val-box input[type=text] {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 34px;
+            width: 212px;
+            opacity: 0.9;
+            z-index: -999;
+            outline: none;
+        }
+
+        .val-box div {
+            height: 34px;
+            width: 28px;
+            border: 1px solid #DDD;
+            border-radius: 5px;
+            float: left;
+            margin: 2px 3px;
+            z-index: 5;
+            font-size: 1.5em;
+            font-family: arial;
+            font-weight: 530;
+            text-align: center;
+            line-height: 1.5em;
+            cursor: text;
+        }
+        .val-box .available {
+            border-color: #0081db;
+        }
+        .aui-padded-t-60{
+            padding-top: 60px;
+        }
+    </style>
+</head>
+<body class="white-bg">
+
+
+<header id="header" class=" aui-margin-l-30 aui-margin-r-30" style="overflow: hidden">
+    <div class="aui-tab aui-padded-t-60" id="tap">
+        <div id="passwordLogin" class="color aui-tab-item aui-active-login" onclick="passwordLogin()">密码登录</div>
+        <div id="smsLogin" class="aui-tab-item" onclick="smsLogin()">验证码登录</div>
+    </div>
+</header>
+
+<div class="aui-margin-l-30 aui-margin-r-30 aui-margin-t-40" id="passLogin">
+    <div class="aui-font-size-18 ">
+        账号
+    </div>
+    <input placeholder="请输入手机号" type="tel" value="" class="aui-text-left" id="phonenum_pass">
+    <button class="mclear" onclick="clearPhonenumInput()"></button>
+    <div style="border-bottom: 1px solid #eee;"></div>
+    <div class="aui-font-size-18 aui-margin-t-20">
+        密码
+    </div>
+    <input placeholder="请输入密码" value="" type="password" class="aui-text-left passnum" id="member_passwd">
+    <button class="mclearp" onclick="clearPassInput()"></button>
+    <img src="../../image/loginImg/eye_new.png" style="position: absolute;right: 80px;top:283px;width:20px; height:9px;"
+         onclick="openEye()" id="passeye">
+    <div style="border-bottom: 1px solid #eee;"></div>
+</div>
+
+
+<div class="aui-margin-l-30 aui-margin-r-30 aui-margin-t-40" id="codeLogin">
+    <div class="aui-font-size-18 ">
+        账号
+    </div>
+    <input placeholder="请输入手机号" type="tel" value="" class="aui-text-left" id="phonenum_sms">
+    <button class="mclear" onclick="clearPhonenumSmsInput()"></button>
+    <div style="border-bottom: 1px solid #eee;"></div>
+</div>
+<!--登录按钮-->
+<div class="aui-flex-center aui-flex-col" style="margin-top: 50px;">
+    <div class="login-div">
+        <div id="login"
+             style="width: 90%;height: 45px;line-height: 45px;border-radius:10px;font-family: pingfangSC regular;margin: auto;background-color: #ff6b4e "
+             class="aui-text-center white-font-color aui-font-size-16 login_submit" onclick="clickLogin()">
+            登录
+        </div>
+    </div>
+</div>
+<div class="aui-row aui-margin-t-15">
+    <div style="width: 100%;margin-top: 30px" id="regis">
+        <div style="width:85%;margin: auto">
+            <div class="aui-col-xs-5 aui-text-right" onclick="openWin('register_win', './', null, 1)">
+                <span class="aui-font-size-12" style="padding: 0 0.1rem;font-size: 16px;color: #9d9a9a"><span
+                        data-locale="qishi_register account" class="color">立即注册</span></span></div>
+            <div class="aui-col-xs-2 aui-text-center color" style="color: #9d9a9a">|</div>
+            <div class="aui-col-xs-5 aui-text-left"
+                 onclick="openWin('forget_password_win', './', null, 1)">
+                <span class="obtain2 aui-font-size-12" style="padding: 0 0.1rem;font-size: 16px;color: #9d9a9a"><span
+                        data-locale="qishi_forget password" class="color">忘记密码</span></span>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- <div class="aui-flex-center aui-flex-col aui-margin-t-15">
+     <div id="resiter" class="login-div">
+         <div style="width: 80%;height: 45px;line-height: 45px;border-radius: 50px;background-color: #fff;font-family: pingfangSC regular;border:1px solid #666666;color: #666666;margin: auto "
+              class="aui-text-center  aui-font-size-16 register__submit">注册
+         </div>
+     </div>
+ </div>-->
+
+<!--
+    <div class="aui-flex-center aui-flex-col">
+        <div class="login-div" onclick="clickSMSLogin();">
+            <div style="width: 100%;height: 40px;line-height: 40px;border-radius: 6px;background-color: #fff;font-family: pingfangSC regular;border:1px solid #fff; "
+                 class="aui-text-center color aui-font-size-14">短信登录
+            </div>
+        </div>
+    </div>-->
+
+
+</body>
+<script type="text/javascript" src="../../script/common/api.js"></script>
+<script type="text/javascript" src="../../script/common/jquery.min.js"></script>
+
+<script type="text/javascript" src="../../script/common/mobile-prefixes.js"></script>
+<script type="text/javascript" src="../../script/common/common.js"></script>
+<script type="text/javascript" src="../../script/common/api-common.js"></script>
+
+<script type="text/javascript" src="../../script/common/api-manager.js"></script>
+<script type="text/javascript" src="../../script/common/md5.js"></script>
+<script type="text/javascript" src="../../script/project/project-api.js"></script>
+
+<script type="text/javascript">
+
+
+    var loginType   //从密码登录  还是从验证码登录
+    var flag = false  //切换眼睛的flag
+    //入口函数
+    apiready = function () {
+
+        //监听返回事件
+
+        api.addEventListener({
+            name: 'keyback'
+        }, function (ret, err) {
+            //进行提示
+            dialog_alert('', '是否退出物流电商','退出','返回', function (ret, err) {
+                if (ret.eventType === 'right') {
+                    closeDialogBox('alert')
+                }
+                if (ret.eventType === 'left') {
+                    closeDialogBox('alert')
+                    api.closeWidget({
+                        id: api.appId,
+                        retData: {
+                            name: 'closeWidget'
+                        },
+                        silent: true
+                    })
+                }
+            })
+        })
+        addEventListener('resetPass',function (ret,err) {
+            showToast('密码重置成功，请登录')
+        })
+        init()
+    }
+
+    function init() {
+        passwordLogin()
+        // var phonenum_pass = $("#phonenum_pass").val()
+        // if (judgeIsAnyNullStr(phonenum_pass)) {
+        //     $("#login").css("background-color", "#9e9e9e");
+        // }
+        // if (!judgeIsAnyNullStr(phonenum_pass)) {
+        //     $("#login").css("background-color", "#ff6b4e");
+        // }
+    }
+
+    function clearPhonenumInput() {
+        $("#phonenum_pass").val('')
+    }
+
+    function clearPassInput() {
+        $("#member_passwd").val('')
+    }
+    function clearPhonenumSmsInput() {
+        $("#phonenum_sms").val('')
+    }
+
+    function passwordLogin() {
+        loginType = 'pass'
+        $("#passwordLogin").addClass('color')
+        $("#passwordLogin").addClass('aui-active-login')
+        $("#smsLogin").removeClass('color')
+        $("#smsLogin").removeClass('aui-active-login')
+        $("#passLogin").removeClass('aui-hide')
+        $("#codeLogin").addClass('aui-hide')
+    }
+
+    function smsLogin() {
+        loginType = 'sms'
+        $("#passwordLogin").removeClass('color' )
+        $("#passwordLogin").removeClass('aui-active-login')
+        $("#smsLogin").addClass('aui-active-login')
+        $("#smsLogin").addClass('color')
+        $("#passLogin").addClass('aui-hide')
+        $("#codeLogin").removeClass('aui-hide')
+    }
+
+    function openEye() {
+        if (!flag) {
+            $("#passeye").attr('src', '../../image/loginImg/eye_open_new.png')
+            document.getElementById("member_passwd").type = "text";
+            flag = true
+        } else {
+            $("#passeye").attr('src', '../../image/loginImg/eye_new.png')
+            document.getElementById("member_passwd").type = "password";
+            flag = false
+        }
+    }
+
+    function clickLogin() {
+        var phonenum_pass = $("#phonenum_pass").val()
+        var phonenum_sms = $("#phonenum_sms").val()
+        var member_passwd = $("#member_passwd").val()
+        if (loginType == 'sms') {
+            /*
+            从验证码登录页面 点击登录的流程
+            */
+            if (judgeIsAnyNullStr(phonenum_sms)){
+                showToast('请输入手机号')
+                return
+            }
+            if (regular('phone_num', phonenum_sms) !== true) {
+                dialog_evaluation(TIP_STR, '请填写正确的手机号码', [{text: '确认'}], function (ret, err) {
+                    closeDialogBox('evaluation')
+                })
+                return
+            }
+            //判断手机号是否注册
+            var param = {
+                phonenum:phonenum_sms,
+                type:0
+            }
+            user_judgeUserByCon(param,function (ret,err) {
+                if(ret.code=='107'){ //107为号码存在
+                    sendVertifyCode({phonenum:phonenum_sms}, function (ret, err) {
+                        consoledebug.log('send vertify code ret is : ' + JSON.stringify(ret))
+                        if (ret.result) {
+                            // toast(ret.ret)
+                            openWin('sms_login_win', '../../html/login/', {type: 'smslogin',phonenum: phonenum_sms}, 1, false);
+                        } else {
+                            showToast(ret.message)
+                        }
+                    })
+                }else if(ret.code=='200'){
+                    showToast('您还未注册')
+                }else {
+                    consoledebug.log('user_judgeUserByCon err is'+JSON.stringify(err))
+                }
+            })
+        } else {
+            if (judgeIsAnyNullStr(phonenum_pass)){
+                showToast('请输入手机号')
+                return
+            }
+            if (regular('phone_num', phonenum_pass) !== true) {
+                dialog_evaluation(TIP_STR, '请填写正确的手机号码', [{text: '确认'}], function (ret, err) {
+                    closeDialogBox('evaluation')
+                })
+                return
+            }
+            if (judgeIsAnyNullStr(member_passwd)){
+                showToast('请输入密码')
+                return
+            }
+            //配置参数
+            var param = {
+                account_type: 'tel_password',
+                phonenum: phonenum_pass,
+                password: hex_md5(member_passwd),
+                role:0
+            }
+            user_login(param, handleLogin);
+        }
+    }
+
+    //处理登录
+    function handleLogin(ret, err) {
+        consoledebug.log("handleLogin ret is:" + JSON.stringify(ret));
+        //判断结果
+        if (ret.result) {
+            //登录成功，存入缓存userinfo
+            setStorage('user_info', ret.ret)
+            refreshIndex();
+            consoledebug.log("handleLogin>>>>>>>>>>>>>>>>>>> ret is:" + (JSON.stringify(getStorageUser())));
+        } else {
+            showToast(ret.message);
+        }
+    }
+
+    $('#resiter').on('click', function () {
+        openWin('register_win', './', null, 1)
+    })
+
+    function clearInput() {
+        $("#search-input").val('')
+    }
+
+    function refreshIndex() {
+        var jsfun = 'login();';
+        api.execScript({
+            name: 'root',
+            script: jsfun
+        });
+    }
+
+    //点击短信登录
+    function clickSMSLogin() {
+        openWin('sms_login_win', './', null, 1)
+    }
+
+
+</script>
+</html>
